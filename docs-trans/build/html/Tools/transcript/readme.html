@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Transcript select introduction &mdash; BioToolkit v1 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="transcript_select" href="modules.html" />
+    <link rel="prev" title="Tools" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BioToolkit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/README.html">biotoolkit introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transcript select introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">经典转录本参考数据库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">内部经典转录本版本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#transcript-select-20210111-txt-lama3nm-198129"><code class="docutils literal notranslate"><span class="pre">transcript_select_20210111.txt</span> <span class="pre">修正LAMA3的转录本为NM_198129</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transcript-select-20201105-txt"><code class="docutils literal notranslate"><span class="pre">transcript_select_20201105.txt</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">项目工具</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#select-transcript-py"><code class="docutils literal notranslate"><span class="pre">select_transcript.py</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-clinvar-txs-py"><code class="docutils literal notranslate"><span class="pre">get_clinvar_txs.py</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-mane-txs-py"><code class="docutils literal notranslate"><span class="pre">get_mane_txs.py</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-ucsc-kctxs-py"><code class="docutils literal notranslate"><span class="pre">get_ucsc_kctxs.py</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-refgene-txs-py"><code class="docutils literal notranslate"><span class="pre">get_refgene_txs.py</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-lrg-grch38-txs-py"><code class="docutils literal notranslate"><span class="pre">get_LRG_GRCh38_txs.py</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">transcript_select</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BioToolkit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tools</a> &raquo;</li>
+        
+      <li>Transcript select introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/Tools/transcript/readme.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="transcript-select-introduction">
+<h1>Transcript select introduction<a class="headerlink" href="#transcript-select-introduction" title="永久链接至标题">¶</a></h1>
+<p>这个子项目的目标在于解决转录本选择的问题，并建立一个可以由人工持续校对后持续追加的模式。</p>
+<div class="section" id="id1">
+<h2>经典转录本参考数据库<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ol class="simple">
+<li><a class="reference external" href="http://www.lrg-sequence.org/">LRG</a> 提供一个ACMG推荐的经典转录本集，但包含的基因数目很少</li>
+<li><a class="reference external" href="https://www.ncbi.nlm.nih.gov/clinvar/">ClinVar</a> 中转录本使用频率，通过统计ClinVar数据库中每个基因的突变记录中使用的转录本的频率，采用使用频率最高的</li>
+<li><a class="reference external" href="https://www.ncbi.nlm.nih.gov/refseq/MANE/">MANE</a> 全称 Matched Annotation from NCBI and EMBL-EBI。
+提供一个MANE Select集，目前版本0.9，但MANE只针对hg38，不再维护hg19/GRCh37，有一定参考价值。</li>
+</ol>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>MANE Select: One high-quality representative transcript per protein-coding gene that is well-supported by experimental data and represents the biology of the gene.
+</pre></div>
+</div>
+<ol class="simple">
+<li><a class="reference external" href="http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/">UCSC</a> 整理过known canonical集，
+需要和其数据中对应的known gene cross reference配合使用。不过这个数据集最近的更新已经是2013年。</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>内部经典转录本版本<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="transcript-select-20210111-txt-lama3nm-198129">
+<h3><code class="docutils literal notranslate"><span class="pre">transcript_select_20210111.txt</span> <span class="pre">修正LAMA3的转录本为NM_198129</span></code><a class="headerlink" href="#transcript-select-20210111-txt-lama3nm-198129" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="transcript-select-20201105-txt">
+<h3><code class="docutils literal notranslate"><span class="pre">transcript_select_20201105.txt</span></code><a class="headerlink" href="#transcript-select-20201105-txt" title="永久链接至标题">¶</a></h3>
+<p>其中5个数据库的来源及优先级如下：
+0. inhouse_transcript.txt（用于转录本数据的修正，列于优先级第一位）</p>
+<ol class="simple">
+<li>LRG （由ACMG校对，共1080条记录）</li>
+<li>MANE （基于hg38，共15569条记录）</li>
+<li>ClinVar （根据基因对应突变频率统计，共10971条记录）</li>
+<li>UCSC_kgkc （共22481条记录）</li>
+<li>UCSC_refgene （共28210条记录）</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>项目工具<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="select-transcript-py">
+<h3><code class="docutils literal notranslate"><span class="pre">select_transcript.py</span></code><a class="headerlink" href="#select-transcript-py" title="永久链接至标题">¶</a></h3>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>usage: select_transcript.py [-h] output inputs [inputs ...]
+
+To select transcript as canonical from mulitiple inputs
+
+positional arguments:
+  output      Output file name
+  inputs      Input file(s). Priority decrease from first to last given file
+
+optional arguments:
+  -h, --help  show this help message and exit
+</pre></div>
+</div>
+<p>从多个输入的转录本数据文件中对转录本进行挑选，输入数据库的优先级按顺序递减。</p>
+<p>输入转录本文件格式为<code class="docutils literal notranslate"><span class="pre">tab</span></code>分隔的基因，转录本和标签三列，示例：</p>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>A1CF    NM_014576       ClinVar
+A2M     NM_000014       ClinVar
+A2ML1   NM_144670       ClinVar
+A4GALT  NM_017436       ClinVar
+</pre></div>
+</div>
+<p>输出两个文件，一个为主要结果，包含<code class="docutils literal notranslate"><span class="pre">tab</span></code>分隔的四列，基因，转录本，标签和优先级，示例：</p>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>ADAMTS18        NM_199355       ClinVar 1
+ADAMTS19        NM_133638       ClinVar 1
+ADAMTS2 NM_014244       ClinVar 1
+ADAMTS20        NM_025003       ClinVar 1
+</pre></div>
+</div>
+<p>另一个为详细结果，记录基因对应的转录本在个输入数据文件中的情况，示例：</p>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>A1BG    [&#39;NM_130786&#39;, &#39;NM_130786&#39;, &#39;NM_130786&#39;] [&#39;UCSC_kckg&#39;, &#39;MANE&#39;, &#39;UCSC_refGene&#39;]   [2, 3, 4]
+A1BG-AS1        [&#39;NR_015380&#39;, &#39;NR_015380&#39;]      [&#39;UCSC_kckg&#39;, &#39;UCSC_refGene&#39;]   [2, 4]
+A1CF    [&#39;NM_014576&#39;, &#39;NM_138932&#39;, &#39;NM_014576&#39;, &#39;NM_001198819&#39;] [&#39;ClinVar&#39;, &#39;UCSC_kckg&#39;, &#39;MANE&#39;, &#39;UCSC_refGene&#39;]        [1, 2, 3, 4]
+A2M     [&#39;NM_000014&#39;, &#39;NM_000014&#39;, &#39;NM_000014&#39;, &#39;NM_001347423&#39;] [&#39;ClinVar&#39;, &#39;UCSC_kckg&#39;, &#39;MANE&#39;, &#39;UCSC_refGene&#39;]        [1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-clinvar-txs-py">
+<h3><code class="docutils literal notranslate"><span class="pre">get_clinvar_txs.py</span></code><a class="headerlink" href="#get-clinvar-txs-py" title="永久链接至标题">¶</a></h3>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>usage: get_clinvar_txs.py [-h] variant_summary outfile
+
+Get gene and transript information from variant_summary.txt(.gz).
+
+positional arguments:
+  variant_summary  ClinVar variant summary, variant_summary.txt(.gz)
+  outfile          Output file name
+
+optional arguments:
+  -h, --help       show this help message and exit
+</pre></div>
+</div>
+<p>从ClinVar数据库中按基因所包含突变是用的转录本频次对转录本进行挑选。
+输入为ClinVar数据库中下载的<code class="docutils literal notranslate"><span class="pre">variant_summary.txt(.gz)</span></code>，
+输出按频率筛选的转录本，各基因使用转录本的频次统计，示例分别为：</p>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>A1CF    NM_014576       ClinVar
+A2M     NM_000014       ClinVar
+A2ML1   NM_144670       ClinVar
+</pre></div>
+</div>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>ABCA2   NM_212533       1
+ABCA2   NM_001606       36
+ABCA3   NM_001089       275
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-mane-txs-py">
+<h3><code class="docutils literal notranslate"><span class="pre">get_mane_txs.py</span></code><a class="headerlink" href="#get-mane-txs-py" title="永久链接至标题">¶</a></h3>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>usage: get_mane_txs.py [-h] manebed outfile
+
+Get gene and transript information from mane.{version}.bed
+
+positional arguments:
+  manebed     MANE bed format, normally converted from bigbed by UCSC tool
+              bigBedToBed
+  outfile     Output file name
+
+optional arguments:
+  -h, --help  show this help message and exit
+</pre></div>
+</div>
+<p>从MANE数据库中提取基因和转录本对应表，格式与以上类似。</p>
+</div>
+<div class="section" id="get-ucsc-kctxs-py">
+<h3><code class="docutils literal notranslate"><span class="pre">get_ucsc_kctxs.py</span></code><a class="headerlink" href="#get-ucsc-kctxs-py" title="永久链接至标题">¶</a></h3>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>usage: get_ucsc_kctxs.py [-h] kctx kgxref outfile
+
+Get canonical transripts from UCSC known canonical.
+
+positional arguments:
+  kctx        UCSC known canonical, knownCanonical.txt(.gz)
+  kgxref      UCSC known gene cross reference, kgXref.txt(.gz)
+  outfile     Output file name
+
+optional arguments:
+  -h, --help  show this help message and exit
+</pre></div>
+</div>
+<p>从UCSC整理的known canonical transcript和known gene cross reference中提取基因转录本对应表，
+格式与以上类似。</p>
+</div>
+<div class="section" id="get-refgene-txs-py">
+<h3><code class="docutils literal notranslate"><span class="pre">get_refgene_txs.py</span></code><a class="headerlink" href="#get-refgene-txs-py" title="永久链接至标题">¶</a></h3>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>usage: get_refgene_txs.py [-h] refgene outfile
+
+Get gene and transript information from refGene.txt(.gz).
+
+positional arguments:
+  refgene     UCSC refgene file, refGene.txt(.gz)
+  outfile     Output file
+
+optional arguments:
+  -h, --help  show this help message and exit
+</pre></div>
+</div>
+<p>从UCSC refGene.txt(.gz)中提取基因转录本对应表。
+通常来说，这个作为最后优先级，即，当其他数据都没包含对基因的转录本选择且存在多个转录本时，
+选择refGene记录中最长（exon数目对多）的转录本。</p>
+</div>
+<div class="section" id="get-lrg-grch38-txs-py">
+<h3><code class="docutils literal notranslate"><span class="pre">get_LRG_GRCh38_txs.py</span></code><a class="headerlink" href="#get-lrg-grch38-txs-py" title="永久链接至标题">¶</a></h3>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>usage: get_LRG_GRCh38_txs.py [-h] LRG_GRCh38 outfile
+
+Get gene and transript information from list_LRGs_transcripts_GRCh38_xrefs.txt.
+
+positional arguments:
+  LRG_GRCh38     LRG GRCh38 file, list_LRGs_transcripts_GRCh38_xrefs.txt
+  outfile     Output file
+
+optional arguments:
+  -h, --help  show this help message and exit
+</pre></div>
+</div>
+<p>从LRG list_LRGs_transcripts_GRCh38_xrefs.txt中提取基因转录本对应表。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="modules.html" class="btn btn-neutral float-right" title="transcript_select" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, AegiCare.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

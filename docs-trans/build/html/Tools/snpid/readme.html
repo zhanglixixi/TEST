@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>SNP ID &mdash; BioToolkit v1 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BioToolkit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/README.html">biotoolkit introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BioToolkit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SNP ID</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/Tools/snpid/readme.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="snp-id">
+<h1>SNP ID<a class="headerlink" href="#snp-id" title="永久链接至标题">¶</a></h1>
+<p>当比较两个样本在基因组某一个具体位置上的SNP，则有可能相同或不同，并且相同的概率不低。
+显而易见地，当比较的位置增多，则所有位置上的SNP都相同的概率就会越来越低。</p>
+<p>因此，使用经过一定挑选的区域，采用区域内的基因型可以达到给样本标记SNP ID的目的。</p>
+<p><code class="docutils literal notranslate"><span class="pre">snpid-evalute.sh</span></code>可以用于计算一批给定的VCF在所给基因组区域(bed)上突变的差异大小。
+结果按差异大小进行排序。</p>
+<p>因此，可以用于判定一批VCF中是否存在相同的SNP ID。即VCF是否来自于同一样本。</p>
+<div class="section" id="id1">
+<h2>用法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>Program: snpid-evaluate.sh
+Version: 1.0.200925
+Description: Evaluate SNP ID results - compute distances between samples for evaluting
+
+Usage: snpid-evaluate.sh [options] outdir sample-vcf-map
+Options:
+  -b|--bed FILE    SNP ID bed file [/qh04/database/human/enrichments/bed/snpid-v1/hg19/targets.bed]
+  -h|--help        print help message
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">--bed</span></code> 指定挑选的基因组区域，<code class="docutils literal notranslate"><span class="pre">sample-vcf-map</span></code>为指定<code class="docutils literal notranslate"><span class="pre">sample</span></code>和<code class="docutils literal notranslate"><span class="pre">vcf</span></code>对应关系的文件，tab分隔，示例如下：</p>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>SAS17439	/qh01/results/development/SAS17439/variant/snv/data/SAS17439.norm.vcf.gz
+SAS17440	/qh01/results/development/SAS17440/variant/snv/data/SAS17440.norm.vcf.gz
+SAS17441	/qh01/results/development/SAS17441/variant/snv/data/SAS17441.norm.vcf.gz
+SAS17442	/qh01/results/development/SAS17442/variant/snv/data/SAS17442.norm.vcf.gz
+SAS17444	/qh01/results/development/SAS17444/variant/snv/data/SAS17444.norm.vcf.gz
+SAS17445	/qh01/results/development/SAS17445/variant/snv/data/SAS17445.norm.vcf.gz
+SAS17446	/qh01/results/development/SAS17446/variant/snv/data/SAS17446.norm.vcf.gz
+SAS17447	/qh01/results/development/SAS17447/variant/snv/data/SAS17447.norm.vcf.gz
+SAS17448	/qh01/results/development/SAS17448/variant/snv/data/SAS17448.norm.vcf.gz
+SAS17449	/qh01/results/development/SAS17449/variant/snv/data/SAS17449.norm.vcf.gz
+SAS17453	/qh01/results/development/SAS17453/variant/snv/data/SAS17453.norm.vcf.gz
+SAS17454	/qh01/results/development/SAS17454/variant/snv/data/SAS17454.norm.vcf.gz
+SAS17455	/qh01/results/development/SAS17455/variant/snv/data/SAS17455.norm.vcf.gz
+SAS17456	/qh01/results/development/SAS17456/variant/snv/data/SAS17456.norm.vcf.gz
+SAS17457	/qh01/results/development/SAS17457/variant/snv/data/SAS17457.norm.vcf.gz
+SAS17458	/qh01/results/development/SAS17458/variant/snv/data/SAS17458.norm.vcf.gz
+</pre></div>
+</div>
+<p>SNP差异结果存在<code class="docutils literal notranslate"><span class="pre">snps_dist.txt</span></code>文件中，其格式如下，a,b,c为SNP差异值，按从小到大排序：</p>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>sample1 - sample2	a
+sample1 - sample3	b
+sample2 - sample3	c
+...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h1>场景<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h1>
+<p>一种常用的场景是检查测序数据（WES/WGS）是否来自于某一样本。
+在有数据的情况下，只需要对该样本的指定SNP ID区域测序，然后计算两个vcf之间的SNP距离即可。</p>
+<p>SNPID测序的分析流程使用最新版 <code class="docutils literal notranslate"><span class="pre">biomodules-{version}/shellflows/snpid/snpid.sge.sh</span></code>，用法为</p>
+<div class="highlight-textmate notranslate"><div class="highlight"><pre><span></span>Program: snpid.sge.sh
+Version: 1.0.200924
+Description: shell script flow - snpid
+
+Usage: snpid.sge.sh [options] outdir prefix fq1 fq2
+Options:
+  -m|--biomodules-dir PATH    biomodules directory [/aegis/staff/yongchu/CodeSpace/dev/biomodules]
+  -f|--config FILE            configuration file [/aegis/staff/yongchu/CodeSpace/dev/biomodules/coms/configs/mgi2000.snpid.v1.configs.sh]
+  -h|--help                   print help message
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, AegiCare.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
