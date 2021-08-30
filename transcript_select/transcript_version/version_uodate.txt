@@ -1,0 +1,10 @@
+Version:20210803
+  更新ClinVar转录本数据库版本为20210731
+
+Version:20210225
+  新增inhouse转录本数据库
+  SCN1A	NM_001165963	inhouse
+
+Version：20210111
+  新增inhouse转录本数据库
+  LAMA3	NM_198129	inhouse

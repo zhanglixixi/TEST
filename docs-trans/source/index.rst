@@ -30,14 +30,6 @@ SNPID
    Tools/snpid/readme
    Tools/snpid/modules
 
-cnvlib
--------
-
-.. toctree::
-   :maxdepth: 2
-   
-   cnvlib/cnvlib
-
 
 
 Indices and tables

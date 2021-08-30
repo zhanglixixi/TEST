@@ -95,35 +95,14 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">transcript_select</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">transcript_select package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#transcript-select-get-lrg-grch38-txs-module">transcript_select.get_LRG_GRCh38_txs module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#get-lrg-grch38-txs"><code class="docutils literal notranslate"><span class="pre">get_LRG_GRCh38_txs</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#transcript-select-get-clinvar-txs-module">transcript_select.get_clinvar_txs module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#get-clinvar-txs"><code class="docutils literal notranslate"><span class="pre">get_clinvar_txs</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#transcript-select-get-mane-txs-module">transcript_select.get_mane_txs module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#get-mane-txs"><code class="docutils literal notranslate"><span class="pre">get_mane_txs</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#transcript-select-get-refgene-txs-module">transcript_select.get_refgene_txs module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#get-refgene-txs"><code class="docutils literal notranslate"><span class="pre">get_refgene_txs</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#transcript-select-get-ucsc-kctxs-module">transcript_select.get_ucsc_kctxs module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#get-ucsc-kctxs"><code class="docutils literal notranslate"><span class="pre">get_ucsc_kctxs</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#transcript-select-select-transcript-module">transcript_select.select_transcript module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#select-transcript"><code class="docutils literal notranslate"><span class="pre">select_transcript</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#transcript-select-utils-module">transcript_select.utils module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utils"><code class="docutils literal notranslate"><span class="pre">utils</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-transcript_select.get_LRG_GRCh38_txs">transcript_select.get_LRG_GRCh38_txs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-transcript_select.get_clinvar_txs">transcript_select.get_clinvar_txs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-transcript_select.get_mane_txs">transcript_select.get_mane_txs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transcript-select-get-refgene-txs-module">transcript_select.get_refgene_txs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transcript-select-get-ucsc-kctxs-module">transcript_select.get_ucsc_kctxs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transcript-select-select-transcript-module">transcript_select.select_transcript module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-transcript_select.utils">transcript_select.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-transcript_select">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -207,56 +186,94 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
 </div>
-<div class="section" id="transcript-select-get-lrg-grch38-txs-module">
-<h2>transcript_select.get_LRG_GRCh38_txs module<a class="headerlink" href="#transcript-select-get-lrg-grch38-txs-module" title="永久链接至标题">¶</a></h2>
-<div class="section" id="get-lrg-grch38-txs">
-<h3><code class="docutils literal notranslate"><span class="pre">get_LRG_GRCh38_txs</span></code><a class="headerlink" href="#get-lrg-grch38-txs" title="永久链接至标题">¶</a></h3>
-<p>Get transcript from LRG.</p>
+<div class="section" id="module-transcript_select.get_LRG_GRCh38_txs">
+<span id="transcript-select-get-lrg-grch38-txs-module"></span><h2>transcript_select.get_LRG_GRCh38_txs module<a class="headerlink" href="#module-transcript_select.get_LRG_GRCh38_txs" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="transcript_select.get_LRG_GRCh38_txs.get_LRG_transcripts">
+<code class="descclassname">transcript_select.get_LRG_GRCh38_txs.</code><code class="descname">get_LRG_transcripts</code><span class="sig-paren">(</span><em>LRGtxt</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_LRG_GRCh38_txs.html#get_LRG_transcripts"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_LRG_GRCh38_txs.get_LRG_transcripts" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="transcript_select.get_LRG_GRCh38_txs.get_args">
+<code class="descclassname">transcript_select.get_LRG_GRCh38_txs.</code><code class="descname">get_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_LRG_GRCh38_txs.html#get_args"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_LRG_GRCh38_txs.get_args" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="transcript_select.get_LRG_GRCh38_txs.main">
+<code class="descclassname">transcript_select.get_LRG_GRCh38_txs.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_LRG_GRCh38_txs.html#main"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_LRG_GRCh38_txs.main" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 </div>
+<div class="section" id="module-transcript_select.get_clinvar_txs">
+<span id="transcript-select-get-clinvar-txs-module"></span><h2>transcript_select.get_clinvar_txs module<a class="headerlink" href="#module-transcript_select.get_clinvar_txs" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="transcript_select.get_clinvar_txs.get_args">
+<code class="descclassname">transcript_select.get_clinvar_txs.</code><code class="descname">get_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_clinvar_txs.html#get_args"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_clinvar_txs.get_args" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="transcript_select.get_clinvar_txs.get_clinvar_transcripts">
+<code class="descclassname">transcript_select.get_clinvar_txs.</code><code class="descname">get_clinvar_transcripts</code><span class="sig-paren">(</span><em>variant_summary_file</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_clinvar_txs.html#get_clinvar_transcripts"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_clinvar_txs.get_clinvar_transcripts" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="transcript_select.get_clinvar_txs.main">
+<code class="descclassname">transcript_select.get_clinvar_txs.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_clinvar_txs.html#main"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_clinvar_txs.main" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 </div>
-<div class="section" id="transcript-select-get-clinvar-txs-module">
-<h2>transcript_select.get_clinvar_txs module<a class="headerlink" href="#transcript-select-get-clinvar-txs-module" title="永久链接至标题">¶</a></h2>
-<div class="section" id="get-clinvar-txs">
-<h3><code class="docutils literal notranslate"><span class="pre">get_clinvar_txs</span></code><a class="headerlink" href="#get-clinvar-txs" title="永久链接至标题">¶</a></h3>
-<p>Get transcript from ClinVar.</p>
-</div>
-</div>
-<div class="section" id="transcript-select-get-mane-txs-module">
-<h2>transcript_select.get_mane_txs module<a class="headerlink" href="#transcript-select-get-mane-txs-module" title="永久链接至标题">¶</a></h2>
-<div class="section" id="get-mane-txs">
-<h3><code class="docutils literal notranslate"><span class="pre">get_mane_txs</span></code><a class="headerlink" href="#get-mane-txs" title="永久链接至标题">¶</a></h3>
-<p>Get transcript from MANE.</p>
-</div>
+<div class="section" id="module-transcript_select.get_mane_txs">
+<span id="transcript-select-get-mane-txs-module"></span><h2>transcript_select.get_mane_txs module<a class="headerlink" href="#module-transcript_select.get_mane_txs" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="transcript_select.get_mane_txs.get_args">
+<code class="descclassname">transcript_select.get_mane_txs.</code><code class="descname">get_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_mane_txs.html#get_args"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_mane_txs.get_args" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="transcript_select.get_mane_txs.get_mane_transcripts">
+<code class="descclassname">transcript_select.get_mane_txs.</code><code class="descname">get_mane_transcripts</code><span class="sig-paren">(</span><em>manebed</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_mane_txs.html#get_mane_transcripts"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_mane_txs.get_mane_transcripts" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="transcript_select.get_mane_txs.main">
+<code class="descclassname">transcript_select.get_mane_txs.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/get_mane_txs.html#main"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.get_mane_txs.main" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="transcript-select-get-refgene-txs-module">
 <h2>transcript_select.get_refgene_txs module<a class="headerlink" href="#transcript-select-get-refgene-txs-module" title="永久链接至标题">¶</a></h2>
-<div class="section" id="get-refgene-txs">
-<h3><code class="docutils literal notranslate"><span class="pre">get_refgene_txs</span></code><a class="headerlink" href="#get-refgene-txs" title="永久链接至标题">¶</a></h3>
-<p>Get transcript from RefGene.</p>
-</div>
 </div>
 <div class="section" id="transcript-select-get-ucsc-kctxs-module">
 <h2>transcript_select.get_ucsc_kctxs module<a class="headerlink" href="#transcript-select-get-ucsc-kctxs-module" title="永久链接至标题">¶</a></h2>
-<div class="section" id="get-ucsc-kctxs">
-<h3><code class="docutils literal notranslate"><span class="pre">get_ucsc_kctxs</span></code><a class="headerlink" href="#get-ucsc-kctxs" title="永久链接至标题">¶</a></h3>
-<p>Get transcript from ucsc kctxs.</p>
-</div>
 </div>
 <div class="section" id="transcript-select-select-transcript-module">
 <h2>transcript_select.select_transcript module<a class="headerlink" href="#transcript-select-select-transcript-module" title="永久链接至标题">¶</a></h2>
-<div class="section" id="select-transcript">
-<h3><code class="docutils literal notranslate"><span class="pre">select_transcript</span></code><a class="headerlink" href="#select-transcript" title="永久链接至标题">¶</a></h3>
-<p>Transcription Selection</p>
 </div>
+<div class="section" id="module-transcript_select.utils">
+<span id="transcript-select-utils-module"></span><h2>transcript_select.utils module<a class="headerlink" href="#module-transcript_select.utils" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="transcript_select.utils.chromosome_list">
+<code class="descclassname">transcript_select.utils.</code><code class="descname">chromosome_list</code><span class="sig-paren">(</span><em>fix_chr=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/utils.html#chromosome_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.utils.chromosome_list" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="transcript_select.utils.content_line">
+<code class="descclassname">transcript_select.utils.</code><code class="descname">content_line</code><span class="sig-paren">(</span><em>fin</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/utils.html#content_line"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.utils.content_line" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="transcript_select.utils.main">
+<code class="descclassname">transcript_select.utils.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select/utils.html#main"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.utils.main" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 </div>
-<div class="section" id="transcript-select-utils-module">
-<h2>transcript_select.utils module<a class="headerlink" href="#transcript-select-utils-module" title="永久链接至标题">¶</a></h2>
-<div class="section" id="utils">
-<h3><code class="docutils literal notranslate"><span class="pre">utils</span></code><a class="headerlink" href="#utils" title="永久链接至标题">¶</a></h3>
-</div>
-</div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="永久链接至标题">¶</a></h2>
+<div class="section" id="module-transcript_select">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-transcript_select" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="transcript_select.main">
+<code class="descclassname">transcript_select.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/transcript_select.html#main"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#transcript_select.main" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 </div>
 

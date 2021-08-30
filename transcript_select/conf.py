@@ -14,8 +14,8 @@
 #
 import os
 import sys
-sys.path.append('/home/liyu/ReadtheDocs/biotoolkit')
-sys.path.insert(0, os.path.abspath('/home/liyu/ReadtheDocs/biotoolkit/snpid'))
+# sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('D:/My_github/Test_readthrDocs/TEST/cnvlib/'))
 
 
 # -- Project information -----------------------------------------------------
@@ -51,6 +51,10 @@ extensions = [
     'sphinx.ext.githubpages',
     'recommonmark'
 ]
+extensions.append('autoapi.extension')
+extensions.append("sphinx.ext.napoleon")
+autoapi_type = 'python'
+autoapi_dirs = ['../../transcript_select']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
