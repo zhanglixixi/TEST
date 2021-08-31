@@ -14,8 +14,8 @@
 #
 import os
 import sys
-sys.path.append('/home/liyu/ReadtheDocs/biotoolkit')
-sys.path.insert(0, os.path.abspath('/home/liyu/ReadtheDocs/biotoolkit/snpid'))
+# sys.path.append('/home/liyu/ReadtheDocs/biotoolkit')
+# sys.path.insert(0, os.path.abspath('/home/liyu/ReadtheDocs/biotoolkit/snpid'))
 
 
 # -- Project information -----------------------------------------------------
